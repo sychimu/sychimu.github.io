@@ -110,6 +110,20 @@
 
   
   <url>
+    <loc>https://sychimu.github.io/tags/PE1100N/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/Jetson/</loc>
+    <lastmod>2025-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sychimu.github.io/tags/BIOS/</loc>
     <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -132,20 +146,6 @@
   
   <url>
     <loc>https://sychimu.github.io/tags/NVIDIA/</loc>
-    <lastmod>2025-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sychimu.github.io/tags/PE1100N/</loc>
-    <lastmod>2025-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sychimu.github.io/tags/Jetson/</loc>
     <lastmod>2025-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>IoT产品刷新BIOS-SOP</title>
+      <link href="/2025/08/07/IoT%E4%BA%A7%E5%93%81%E5%88%B7%E6%96%B0BIOS-SOP/"/>
+      <url>/2025/08/07/IoT%E4%BA%A7%E5%93%81%E5%88%B7%E6%96%B0BIOS-SOP/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>将 BIOS.zip 解压缩，得到 .CAP 文件，将.CAP 文件拷贝到 U 盘（FAT32格式）中，并插到主板 USB 接口。</p></li><li><p>开机按 F2&#x2F;DEL 进入 BIOS，右方向键进入 <em>Advanced</em>，向下选择 <em>EZ-Flash</em>，回车。</p><p><img src="/2025/08/07/IoT%E4%BA%A7%E5%93%81%E5%88%B7%E6%96%B0BIOS-SOP/2.jpg"></p></li><li><p>选择 <em>Enter Ez-Flash mode</em>，再次回车，选择 Yes，机台重启。</p><p><img src="/2025/08/07/IoT%E4%BA%A7%E5%93%81%E5%88%B7%E6%96%B0BIOS-SOP/3.jpg"></p></li><li><p>重启后进入 EZ-FLASH 界面。</p><p><img src="/2025/08/07/IoT%E4%BA%A7%E5%93%81%E5%88%B7%E6%96%B0BIOS-SOP/4.jpg"></p></li><li><p>选择 U 盘，按回车进入 U 盘文件目录。</p><p><img src="/2025/08/07/IoT%E4%BA%A7%E5%93%81%E5%88%B7%E6%96%B0BIOS-SOP/5.jpg"></p></li><li><p>选择正确的 BIOS 档案.CAP，并按下回车，等待自动更新 BIOS 完成</p><p><img src="/2025/08/07/IoT%E4%BA%A7%E5%93%81%E5%88%B7%E6%96%B0BIOS-SOP/6.jpg"></p></li><li><p>刷新完成，等待 5 秒自动重启。</p></li><li><p>再次进入 BIOS，<strong>按 F3 调取新 BIOS 默认设定值，F4 保存重启，完成更新</strong>。</p></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> BIOS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Q470EA + RTX3060Ti + 银河麒麟 V10 SP1 2503 &gt;&gt; 更新官网 570.172.08 驱动</title>
+      <link href="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/"/>
+      <url>/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/</url>
+      
+        <content type="html"><![CDATA[<ol><li><p>系统下核显 + 独显同时显示:</p><p>BIOS &gt;&gt;&gt; Advanced &gt;&gt;&gt; Graphics Configuration &gt;&gt;&gt; Internal Graphics &gt; Enabled</p></li><li><p>安装银河麒麟 V10 SP1 2503</p><p>（2403 版本验证安装驱动过程会有权限写入问题，无法安装）</p></li><li><p>RTX3060Ti 可以直接识别正常，终端中<code>nvidia-smi</code>可以认到显卡驱动是 470.161.03</p><p>终端输出示例：</p><p><img src="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/3.1.jpg"></p></li><li><p>拷贝驱动文件并赋予权限：</p></li></ol><p>拷贝<code>NVIDIA-Linux-x86_64-570.172.08.run</code>到<code>/home/当前用户名/</code>，终端执行：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+x NVIDIA-Linux-x86_64-570.172.08.run</span><br></pre></td></tr></table></figure><ol start="5"><li>尝试更新 570.172.08 驱动：</li></ol><p>A. 卸载系统自带 nvidia 470 驱动：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt purge nvidia-graphics-driver</span><br></pre></td></tr></table></figure><p>B. 禁用 Nouveau 驱动：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/modprobe.d/blacklist.conf</span><br></pre></td></tr></table></figure><p>在文件最后一行增加以下内容（VIM操作方法：先按Insert进入编辑状态，光标移动到最下方最后一个字符后回车，输入添加的内容后，按ESC退出编辑状态）：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blacklist nouveau</span><br><span class="line"></span><br><span class="line">options nouveau modeset=0</span><br></pre></td></tr></table></figure><p>保存退出（直接输入<code>:wq</code>），然后执行：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo update-initramfs -u</span><br><span class="line"></span><br><span class="line">reboot</span><br></pre></td></tr></table></figure><p><em>重启后如果无法进入图形界面，正常启动后左上角出现光标闪动，按</em><code>ctl+alt+F1</code><em>进入命令行界面，先输入用户名回车，再输入密码登录</em></p><p>C. 安装编译工具（联网状态）：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install g++ gcc make</span><br></pre></td></tr></table></figure><p>D. 安装驱动：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./NVIDIA-Linux-x86_64-570.172.08.run</span><br></pre></td></tr></table></figure><p><em>中间提示选择 NVIDIA Proprietary<br><img src="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/5.1.jpg"><br>安装 32bit lib 库，YES<br><img src="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/5.2.jpg"><br>不安装 dkms，NO<br><img src="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/5.3.jpg"><br>不安装自动更新，NO</em><br><img src="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/5.4.jpg"></p><p>E. 安装成功后，回到图形界面：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/lightdm restart</span><br></pre></td></tr></table></figure><ol start="6"><li>验证驱动安装是否成功：</li></ol><p>终端输入<code>nvidia-smi</code>查看驱动版本，输出示例：</p><p><img src="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/6.1.jpg"></p><ol start="7"><li>如遇到安装驱动提示权限不足问题<br><img src="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/7.1.jpg"><br>从图形界面，菜单中找到安全中心<br><img src="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/7.2.jpg"><br>将 <em>应用保护</em> 内的选项都关闭<br><img src="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/7.3.jpg"><br>将 <em>设备安全</em> 内的选项都关闭<br><img src="/2025/08/06/Q470EA-RTX3060-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F2503-570%E9%A9%B1%E5%8A%A8/7.4.jpg"></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Q470EA </tag>
+            
+            <tag> 银河麒麟V10 SP1 2503 </tag>
+            
+            <tag> NVIDIA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2025/08/06/hello-world/"/>
+      <url>/2025/08/06/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>欢迎来到Caspar的小站，临时分享一些技术内容！</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>

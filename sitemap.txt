@@ -10,8 +10,8 @@ https://sychimu.github.io/categories/index.html
 https://sychimu.github.io/repository/index.html
 https://sychimu.github.io/404.html
 https://sychimu.github.io/
-https://sychimu.github.io/tags/BIOS/
 https://sychimu.github.io/tags/PE1100N-Jetson/
 https://sychimu.github.io/tags/Q470EA/
 https://sychimu.github.io/tags/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9FV10-SP1-2503/
 https://sychimu.github.io/tags/NVIDIA/
+https://sychimu.github.io/tags/BIOS/

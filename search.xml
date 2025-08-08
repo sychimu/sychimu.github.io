@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>上电自启设定</title>
+      <link href="/2025/08/08/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF%E8%AE%BE%E5%AE%9A/"/>
+      <url>/2025/08/08/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF%E8%AE%BE%E5%AE%9A/</url>
+      
+        <content type="html"><![CDATA[<ol><li><h4 id="BIOS设定上电自启"><a href="#BIOS设定上电自启" class="headerlink" title="BIOS设定上电自启"></a>BIOS设定上电自启</h4></li></ol><ul><li>开机按F2&#x2F;DEL进入BIOS，右方向键 进入 <em>Advanced</em> 选项卡</li></ul><p><img src="/2025/08/08/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF%E8%AE%BE%E5%AE%9A/1.jpg"></p><ul><li>向下选择 <em>APM Configuration</em> 回车进入</li></ul><p><img src="/2025/08/08/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF%E8%AE%BE%E5%AE%9A/2.jpg"></p><ul><li>选择 <em>Restore AC Power Loss</em>，默认 <strong>[S5 State]</strong>，回车选择 <strong>[S0 State]</strong></li></ul><p><img src="/2025/08/08/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF%E8%AE%BE%E5%AE%9A/3.jpg"></p><ul><li>设定S0后，按 <em>F4</em> 保存并重启，再次启动后关机</li></ul><p><img src="/2025/08/08/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF%E8%AE%BE%E5%AE%9A/4.jpg"></p><ul><li>验证上电自启：关机后，<em><strong>完全断电30秒 ~ 1分钟后，再次进行上电动作</strong></em>，机台自行上电启动，确认上电自启设定成功。</li></ul><ol start="2"><li><h4 id="主板跳线设定上电自启"><a href="#主板跳线设定上电自启" class="headerlink" title="主板跳线设定上电自启"></a>主板跳线设定上电自启</h4><p>大部分主板有 <em>AT&#x2F;ATX 跳线</em>，可以通过AT&#x2F;ATX跳线改动，实现上电自启功能，具体位置参考主板手册</p><img src="/2025/08/08/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF%E8%AE%BE%E5%AE%9A/image-20250808153239672.png" alt="image-20250808153239672" style="zoom: 67%;"><p><img src="/2025/08/08/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF%E8%AE%BE%E5%AE%9A/image-20250808153520991.png" alt="image-20250808153520991"></p></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 上电自启 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PE1100N烧录系统</title>
       <link href="/2025/08/07/PE1100N%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/"/>
       <url>/2025/08/07/PE1100N%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/</url>

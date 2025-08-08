@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://sychimu.github.io/about/index.html</loc>
+    <loc>https://sychimu.github.io/repository/index.html</loc>
     
     <lastmod>2025-08-06</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://sychimu.github.io/repository/index.html</loc>
+    <loc>https://sychimu.github.io/about/index.html</loc>
     
     <lastmod>2025-08-06</lastmod>
     
@@ -119,13 +119,6 @@
 
   
   <url>
-    <loc>https://sychimu.github.io/tags/BIOS/</loc>
-    <lastmod>2025-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sychimu.github.io/tags/Q470EA/</loc>
     <lastmod>2025-08-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -141,6 +134,13 @@
   
   <url>
     <loc>https://sychimu.github.io/tags/NVIDIA/</loc>
+    <lastmod>2025-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/BIOS/</loc>
     <lastmod>2025-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -6,7 +6,7 @@
   <link href="https://sychimu.github.io/atom.xml" rel="self"/>
   
   <link href="https://sychimu.github.io/"/>
-  <updated>2025-08-14T05:39:15.768Z</updated>
+  <updated>2025-08-14T07:06:09.474Z</updated>
   <id>https://sychimu.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SATA热插拔功能验证</title>
+    <link href="https://sychimu.github.io/2025/08/14/SATA%E7%83%AD%E6%8F%92%E6%8B%94%E5%8A%9F%E8%83%BD%E9%AA%8C%E8%AF%81/"/>
+    <id>https://sychimu.github.io/2025/08/14/SATA%E7%83%AD%E6%8F%92%E6%8B%94%E5%8A%9F%E8%83%BD%E9%AA%8C%E8%AF%81/</id>
+    <published>2025-08-14T06:51:25.000Z</published>
+    <updated>2025-08-14T07:06:09.474Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1、设定SATA-热插拔功能"><a href="#1、设定SATA-热插拔功能" class="headerlink" title="1、设定SATA 热插拔功能"></a>1、设定SATA 热插拔功能</h3><p>SATA接口硬盘热插拔，需要在BIOS中开启这个设置。以华硕消费主板为例，操作步骤如下：</p><ol><li>开机后按 F2 或者 DEL 键，进入 BIOS；</li><li>切换至高级模式（Advanced Mode）；</li><li>依次进入如下路径：Advanced\PCH Storage Configuration，将对应 SATA 接口的 Hot Plug 选项切换至“Enabled”;</li><li>F10 保存当前 BIOS 设置并退出，即可。</li></ol><p><img src="/2025/08/14/SATA%E7%83%AD%E6%8F%92%E6%8B%94%E5%8A%9F%E8%83%BD%E9%AA%8C%E8%AF%81/9f510fb30f2442a7187fdd31c343ad4bd1130234.png" alt="img"></p><h3 id="2、验证SATA热插拔功能-开启（已开启SATA6G-1-Hot-Plug-功能）"><a href="#2、验证SATA热插拔功能-开启（已开启SATA6G-1-Hot-Plug-功能）" class="headerlink" title="2、验证SATA热插拔功能 开启（已开启SATA6G_1 Hot Plug 功能）"></a>2、验证SATA热插拔功能 <em>开启</em>（已开启SATA6G_1 Hot Plug 功能）</h3><ol><li>主板SATA_1接口<em>不接任何设备</em></li><li>通过其他启动设备（M.2 或 其他 SATA口硬盘），启动到windows系统中</li><li>在系统下，先将需要热插拔的硬盘接通<strong>电源线</strong>，再连接<strong>数据线</strong>，插到 SATA_1接口</li><li>此时，电脑会识别到新的存储设备，并识别对应硬盘分区信息，确认热插拔功能开启</li></ol><h3 id="3、验证SATA热插拔功能-关闭（已关闭SATA6G-1-Hot-Plug-功能）"><a href="#3、验证SATA热插拔功能-关闭（已关闭SATA6G-1-Hot-Plug-功能）" class="headerlink" title="3、验证SATA热插拔功能 关闭（已关闭SATA6G_1 Hot Plug 功能）"></a>3、验证SATA热插拔功能 <em>关闭</em>（已关闭SATA6G_1 Hot Plug 功能）</h3><ol><li>主板SATA_1接口<em>不接任何设备</em></li><li>通过其他启动设备（M.2 或 其他 SATA口硬盘），启动到windows系统中</li><li>在系统下，先将需要热插拔的硬盘接通<strong>电源线</strong>，再连接<strong>数据线</strong>，插到 SATA_1接口</li><li>此时，电脑 <em><strong>不会</strong></em> 识别到新的存储设备，确认热插拔功能关闭</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;1、设定SATA-热插拔功能&quot;&gt;&lt;a href=&quot;#1、设定SATA-热插拔功能&quot; class=&quot;headerlink&quot; title=&quot;1、设定SATA 热插拔功能&quot;&gt;&lt;/a&gt;1、设定SATA 热插拔功能&lt;/h3&gt;&lt;p&gt;SATA接口硬盘热插拔，需要在BIOS中开启</summary>
+      
+    
+    
+    
+    
+    <category term="SATA热插拔" scheme="https://sychimu.github.io/tags/SATA%E7%83%AD%E6%8F%92%E6%8B%94/"/>
+    
+    <category term="Hot plug" scheme="https://sychimu.github.io/tags/Hot-plug/"/>
+    
+  </entry>
   
   <entry>
     <title>取消Ubuntu/银河麒麟关机等待60s</title>

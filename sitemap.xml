@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sychimu.github.io/2025/08/14/%E5%8F%96%E6%B6%88Ubuntu-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E5%85%B3%E6%9C%BA%E7%AD%89%E5%BE%8560s/</loc>
+    
+    <lastmod>2025-08-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://sychimu.github.io/2025/08/07/PE1100N%E7%83%A7%E5%BD%95%E7%B3%BB%E7%BB%9F/</loc>
     
     <lastmod>2025-08-08</lastmod>
@@ -74,15 +83,6 @@
   </url>
   
   <url>
-    <loc>https://sychimu.github.io/categories/index.html</loc>
-    
-    <lastmod>2025-08-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://sychimu.github.io/repository/index.html</loc>
     
     <lastmod>2025-08-06</lastmod>
@@ -93,6 +93,15 @@
   
   <url>
     <loc>https://sychimu.github.io/about/index.html</loc>
+    
+    <lastmod>2025-08-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/categories/index.html</loc>
     
     <lastmod>2025-08-06</lastmod>
     
@@ -112,57 +121,78 @@
 
   <url>
     <loc>https://sychimu.github.io/</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>https://sychimu.github.io/tags/BIOS/</loc>
+    <lastmod>2025-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sychimu.github.io/tags/Q470EA/</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sychimu.github.io/tags/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9FV10-SP1-2503/</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sychimu.github.io/tags/NVIDIA/</loc>
-    <lastmod>2025-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sychimu.github.io/tags/BIOS/</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sychimu.github.io/tags/PE1100N/</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sychimu.github.io/tags/Jetson/</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://sychimu.github.io/tags/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF/</loc>
-    <lastmod>2025-08-08</lastmod>
+    <lastmod>2025-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/Ubuntu/</loc>
+    <lastmod>2025-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F/</loc>
+    <lastmod>2025-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/%E5%85%B3%E6%9C%BA60s%E7%AD%89%E5%BE%85/</loc>
+    <lastmod>2025-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

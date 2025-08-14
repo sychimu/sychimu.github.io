@@ -6,7 +6,7 @@
   <link href="https://sychimu.github.io/atom.xml" rel="self"/>
   
   <link href="https://sychimu.github.io/"/>
-  <updated>2025-08-08T07:55:03.035Z</updated>
+  <updated>2025-08-14T05:39:15.768Z</updated>
   <id>https://sychimu.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>取消Ubuntu/银河麒麟关机等待60s</title>
+    <link href="https://sychimu.github.io/2025/08/14/%E5%8F%96%E6%B6%88Ubuntu-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E5%85%B3%E6%9C%BA%E7%AD%89%E5%BE%8560s/"/>
+    <id>https://sychimu.github.io/2025/08/14/%E5%8F%96%E6%B6%88Ubuntu-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E5%85%B3%E6%9C%BA%E7%AD%89%E5%BE%8560s/</id>
+    <published>2025-08-14T04:30:37.000Z</published>
+    <updated>2025-08-14T05:39:15.768Z</updated>
+    
+    <content type="html"><![CDATA[<p>默认按开关键，会弹出关机提示窗口，如果需要直接关机不等待60s，参考如下内容。</p><h3 id="1、Ubuntu"><a href="#1、Ubuntu" class="headerlink" title="1、Ubuntu"></a>1、Ubuntu</h3><img src="/2025/08/14/%E5%8F%96%E6%B6%88Ubuntu-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E5%85%B3%E6%9C%BA%E7%AD%89%E5%BE%8560s/image-20250814123641130.png" alt="image-20250814123641130" style="zoom: 50%;"><p>参考命令如下：（<em>若机台无外接显示设备，需要加装假负载，否则命令无法生效</em>）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings <span class="built_in">set</span> org.gnome.SessionManager logout-prompt <span class="literal">false</span></span><br></pre></td></tr></table></figure><h3 id="2、银河麒麟服务器版"><a href="#2、银河麒麟服务器版" class="headerlink" title="2、银河麒麟服务器版"></a>2、银河麒麟服务器版</h3><img src="/2025/08/14/%E5%8F%96%E6%B6%88Ubuntu-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E5%85%B3%E6%9C%BA%E7%AD%89%E5%BE%8560s/v2-842205febeb7537f3de66fbe3852bf29_1440w.jpg" alt="img" style="zoom:150%;"><p>参考如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//root账户：</span><br><span class="line"><span class="comment"># gsettings set org.mate.power-manager button-power shutdown</span></span><br><span class="line"><span class="comment"># gsettings set org.mate.session logout-prompt false</span></span><br><span class="line">//直接按1次电源键关机</span><br><span class="line"></span><br><span class="line">//非root账户：</span><br><span class="line">$ gsettings <span class="built_in">set</span> org.mate.power-manager button-power shutdown</span><br><span class="line">$ gsettings <span class="built_in">set</span> org.mate.session logout-prompt <span class="literal">false</span></span><br><span class="line">//账户权限问题，需要按2次电源键，直接关机</span><br></pre></td></tr></table></figure><h3 id="3、银河麒麟桌面版"><a href="#3、银河麒麟桌面版" class="headerlink" title="3、银河麒麟桌面版"></a>3、银河麒麟桌面版</h3><img src="/2025/08/14/%E5%8F%96%E6%B6%88Ubuntu-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E5%85%B3%E6%9C%BA%E7%AD%89%E5%BE%8560s/image-20250814132117872.png" alt="image-20250814132117872" style="zoom: 33%;"><p>参考如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gsettings <span class="built_in">set</span> org.ukui.power-manager button-power shutdown</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;默认按开关键，会弹出关机提示窗口，如果需要直接关机不等待60s，参考如下内容。&lt;/p&gt;
+&lt;h3 id=&quot;1、Ubuntu&quot;&gt;&lt;a href=&quot;#1、Ubuntu&quot; class=&quot;headerlink&quot; title=&quot;1、Ubuntu&quot;&gt;&lt;/a&gt;1、Ubuntu&lt;/h3&gt;&lt;i</summary>
+      
+    
+    
+    
+    
+    <category term="Ubuntu" scheme="https://sychimu.github.io/tags/Ubuntu/"/>
+    
+    <category term="银河麒麟" scheme="https://sychimu.github.io/tags/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F/"/>
+    
+    <category term="关机60s等待" scheme="https://sychimu.github.io/tags/%E5%85%B3%E6%9C%BA60s%E7%AD%89%E5%BE%85/"/>
+    
+  </entry>
   
   <entry>
     <title>上电自启设定</title>

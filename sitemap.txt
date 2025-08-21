@@ -1,3 +1,4 @@
+https://sychimu.github.io/motherboard.html
 https://sychimu.github.io/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/
 https://sychimu.github.io/2025/08/14/SATA%E7%83%AD%E6%8F%92%E6%8B%94%E5%8A%9F%E8%83%BD%E9%AA%8C%E8%AF%81/
 https://sychimu.github.io/2025/08/14/%E5%8F%96%E6%B6%88Ubuntu-%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F%E5%85%B3%E6%9C%BA%E7%AD%89%E5%BE%8560s/
@@ -15,15 +16,15 @@ https://sychimu.github.io/books/index.html
 https://sychimu.github.io/404.html
 https://sychimu.github.io/
 https://sychimu.github.io/tags/BIOS/
-https://sychimu.github.io/tags/SATA%E7%83%AD%E6%8F%92%E6%8B%94/
-https://sychimu.github.io/tags/Hot-plug/
-https://sychimu.github.io/tags/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF/
+https://sychimu.github.io/tags/PE1100N/
+https://sychimu.github.io/tags/Jetson/
 https://sychimu.github.io/tags/Q470EA/
 https://sychimu.github.io/tags/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9FV10-SP1-2503/
 https://sychimu.github.io/tags/NVIDIA/
-https://sychimu.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC/
+https://sychimu.github.io/tags/SATA%E7%83%AD%E6%8F%92%E6%8B%94/
+https://sychimu.github.io/tags/Hot-plug/
+https://sychimu.github.io/tags/%E4%B8%8A%E7%94%B5%E8%87%AA%E5%90%AF/
 https://sychimu.github.io/tags/Ubuntu/
 https://sychimu.github.io/tags/%E9%93%B6%E6%B2%B3%E9%BA%92%E9%BA%9F/
 https://sychimu.github.io/tags/%E5%85%B3%E6%9C%BA60s%E7%AD%89%E5%BE%85/
-https://sychimu.github.io/tags/PE1100N/
-https://sychimu.github.io/tags/Jetson/
+https://sychimu.github.io/tags/%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC/

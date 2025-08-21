@@ -18,15 +18,15 @@
   
   
   <title>Caspar小站</title>
-  <meta name="description" content="IoT主板信息              body {             font-family: Arial, sans-serif;             margin: 20px;         }         table {             border-collapse: collapse;             width: 1">
+  <meta name="description" content="主板信息筛选表格（响应式）              body {             font-family: Arial, sans-serif;             margin: 0;             padding: 20px;             box-sizing: border-box;         }         h">
 <meta property="og:type" content="website">
 <meta property="og:title" content="caspar小站">
 <meta property="og:url" content="https://sychimu.github.io/motherboard.html">
 <meta property="og:site_name" content="caspar小站">
-<meta property="og:description" content="IoT主板信息              body {             font-family: Arial, sans-serif;             margin: 20px;         }         table {             border-collapse: collapse;             width: 1">
+<meta property="og:description" content="主板信息筛选表格（响应式）              body {             font-family: Arial, sans-serif;             margin: 0;             padding: 20px;             box-sizing: border-box;         }         h">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-21T02:58:43.253Z">
-<meta property="article:modified_time" content="2025-08-21T02:58:43.253Z">
+<meta property="article:published_time" content="2025-08-21T03:09:48.153Z">
+<meta property="article:modified_time" content="2025-08-21T03:08:57.676Z">
 <meta property="article:author" content="Caspar_sun">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -312,7 +312,7 @@
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
 	<a href="/motherboard.html" class="article-date">
-	  <time datetime="2025-08-21T02:58:43.253Z" itemprop="datePublished">2025-08-21</time>
+	  <time datetime="2025-08-21T03:09:48.153Z" itemprop="datePublished">2025-08-21</time>
 	</a>
 </span>
         
@@ -338,46 +338,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IoT主板信息</title>
+    <title>主板信息筛选表格（响应式）</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        /* 表格容器 - 关键：添加横向滚动 */
+        .table-container {
+            overflow-x: auto; /* 允许横向滚动 */
+            -webkit-overflow-scrolling: touch; /* 优化移动端滚动体验 */
+            margin-top: 20px;
         }
         table {
             border-collapse: collapse;
             width: 100%;
-            margin-top: 20px;
+            min-width: 800px; /* 确保表格有足够宽度展示内容 */
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+            padding: 8px 12px;
             text-align: left;
         }
         th {
             background-color: #f2f2f2;
+            white-space: nowrap; /* 表头不换行 */
         }
-        select {
-            padding: 5px;
-            margin: 5px;
-        }
+        /* 筛选控件容器 */
         .filter-container {
             margin-bottom: 15px;
             padding: 10px;
             border: 1px solid #eee;
             background-color: #f9f9f9;
+            overflow-x: auto; /* 筛选控件过多时也允许横向滚动 */
+        }
+        /* 筛选控件样式优化 */
+        .filter-group {
+            display: inline-flex;
+            align-items: center;
+            margin: 5px;
+        }
+        select {
+            padding: 6px 10px;
+            margin-left: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
         .hidden {
             display: none;
         }
         button {
-            padding: 6px 12px;
+            padding: 8px 16px;
             background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             margin-bottom: 10px;
+            width: 100%; /* 按钮在移动端占满宽度 */
+            max-width: 300px;
         }
         button:hover {
             background-color: #45a049;
@@ -390,6 +415,25 @@
         td a:hover {
             text-decoration: underline;
         }
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            th, td {
+                padding: 6px 8px;
+                font-size: 14px; /* 移动端缩小字体 */
+            }
+            .filter-group {
+                display: block; /* 小屏幕筛选控件垂直排列 */
+                margin-bottom: 10px;
+            }
+            select {
+                width: 100%; /* 筛选器在移动端占满宽度 */
+                margin-left: 0;
+                margin-top: 5px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -401,16 +445,19 @@
         <!-- 筛选控件将通过JS动态生成 -->
     </div>
     
-    <table id="main_table">
-        <thead>
-            <tr id="table-header">
-                <!-- 表头将通过JS动态生成 -->
-            </tr>
-        </thead>
-        <tbody id="table-body">
-            <!-- 表格内容将通过JS动态生成 -->
-        </tbody>
-    </table>
+    <!-- 表格容器 - 用于实现横向滚动 -->
+    <div class="table-container">
+        <table id="main_table">
+            <thead>
+                <tr id="table-header">
+                    <!-- 表头将通过JS动态生成 -->
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <!-- 表格内容将通过JS动态生成 -->
+            </tbody>
+        </table>
+    </div>
 
     <!-- 引入外部主板数据JS文件 -->
     <script src="motherboard_data.js"></script>
@@ -475,7 +522,7 @@
             });
         }
         
-        // 渲染筛选控件（跳过需要隐藏的列）
+        // 渲染筛选控件（优化移动端布局）
         function renderFilters() {
             const filterContainer = document.getElementById('filter-container');
             filterContainer.innerHTML = '';
@@ -483,15 +530,18 @@
             headers.forEach((header, index) => {
                 // 跳过需要隐藏筛选器的列
                 if (excludeFilterColumns.includes(index)) {
-                    return; // 不生成该列的筛选器
+                    return;
                 }
                 
-                // 为其他列生成筛选器
+                // 为筛选控件添加分组容器，优化移动端布局
+                const filterGroup = document.createElement('div');
+                filterGroup.className = 'filter-group';
+                
                 const uniqueValues = [...new Set(motherboardData.map(row => row[index]))];
                 
                 const label = document.createElement('label');
                 label.setAttribute('for', `filter_${index}`);
-                label.textContent = `${header}:`;
+                label.textContent = `按 ${header} 筛选:`;
                 
                 const select = document.createElement('select');
                 select.setAttribute('id', `filter_${index}`);
@@ -509,13 +559,13 @@
                     select.appendChild(option);
                 });
                 
-                filterContainer.appendChild(label);
-                filterContainer.appendChild(select);
-                filterContainer.appendChild(document.createTextNode(' '));
+                filterGroup.appendChild(label);
+                filterGroup.appendChild(select);
+                filterContainer.appendChild(filterGroup);
             });
         }
         
-        // 筛选表格（逻辑不变，自动忽略无筛选器的列）
+        // 筛选表格（逻辑不变）
         function filterTable() {
             const table = document.getElementById('main_table');
             const rows = table.getElementsByTagName('tr');
@@ -525,7 +575,7 @@
                 const cells = rows[i].getElementsByTagName('td');
                 
                 for (let j = 0; j < cells.length; j++) {
-                    // 跳过隐藏了筛选器的列（不参与筛选）
+                    // 跳过隐藏了筛选器的列
                     if (excludeFilterColumns.includes(j)) {
                         continue;
                     }

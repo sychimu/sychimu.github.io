@@ -18,15 +18,15 @@
   
   
   <title>Caspar小站</title>
-  <meta name="description" content="主板信息筛选表格（响应式）              body {             font-family: Arial, sans-serif;             margin: 0;             padding: 20px;             box-sizing: border-box;         }         h">
+  <meta name="description" content="主板信息筛选表格（精准筛选）              body {             font-family: Arial, sans-serif;             margin: 0;             padding: 20px;             box-sizing: border-box;         }">
 <meta property="og:type" content="website">
 <meta property="og:title" content="caspar小站">
 <meta property="og:url" content="https://sychimu.github.io/motherboard/index.html">
 <meta property="og:site_name" content="caspar小站">
-<meta property="og:description" content="主板信息筛选表格（响应式）              body {             font-family: Arial, sans-serif;             margin: 0;             padding: 20px;             box-sizing: border-box;         }         h">
+<meta property="og:description" content="主板信息筛选表格（精准筛选）              body {             font-family: Arial, sans-serif;             margin: 0;             padding: 20px;             box-sizing: border-box;         }">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-21T03:37:29.110Z">
-<meta property="article:modified_time" content="2025-08-21T03:08:57.676Z">
+<meta property="article:published_time" content="2025-08-22T08:06:38.062Z">
+<meta property="article:modified_time" content="2025-08-22T08:05:33.790Z">
 <meta property="article:author" content="Caspar_sun">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -322,7 +322,7 @@
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
 	<a href="/motherboard/index.html" class="article-date">
-	  <time datetime="2025-08-21T03:37:29.110Z" itemprop="datePublished">2025-08-21</time>
+	  <time datetime="2025-08-22T08:06:38.062Z" itemprop="datePublished">2025-08-22</time>
 	</a>
 </span>
         
@@ -348,7 +348,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>主板信息筛选表格（响应式）</title>
+    <title>主板信息筛选表格（精准筛选）</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -360,16 +360,16 @@
             text-align: center;
             margin-bottom: 20px;
         }
-        /* 表格容器 - 关键：添加横向滚动 */
+        /* 表格容器 - 支持横向滚动 */
         .table-container {
-            overflow-x: auto; /* 允许横向滚动 */
-            -webkit-overflow-scrolling: touch; /* 优化移动端滚动体验 */
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
             margin-top: 20px;
         }
         table {
             border-collapse: collapse;
             width: 100%;
-            min-width: 800px; /* 确保表格有足够宽度展示内容 */
+            min-width: 800px;
         }
         th, td {
             border: 1px solid #ddd;
@@ -378,7 +378,7 @@
         }
         th {
             background-color: #f2f2f2;
-            white-space: nowrap; /* 表头不换行 */
+            white-space: nowrap;
         }
         /* 筛选控件容器 */
         .filter-container {
@@ -386,9 +386,8 @@
             padding: 10px;
             border: 1px solid #eee;
             background-color: #f9f9f9;
-            overflow-x: auto; /* 筛选控件过多时也允许横向滚动 */
+            overflow-x: auto;
         }
-        /* 筛选控件样式优化 */
         .filter-group {
             display: inline-flex;
             align-items: center;
@@ -411,7 +410,7 @@
             border-radius: 4px;
             cursor: pointer;
             margin-bottom: 10px;
-            width: 100%; /* 按钮在移动端占满宽度 */
+            width: 100%;
             max-width: 300px;
         }
         button:hover {
@@ -432,14 +431,14 @@
             }
             th, td {
                 padding: 6px 8px;
-                font-size: 14px; /* 移动端缩小字体 */
+                font-size: 14px;
             }
             .filter-group {
-                display: block; /* 小屏幕筛选控件垂直排列 */
+                display: block;
                 margin-bottom: 10px;
             }
             select {
-                width: 100%; /* 筛选器在移动端占满宽度 */
+                width: 100%;
                 margin-left: 0;
                 margin-top: 5px;
             }
@@ -455,7 +454,6 @@
         <!-- 筛选控件将通过JS动态生成 -->
     </div>
     
-    <!-- 表格容器 - 用于实现横向滚动 -->
     <div class="table-container">
         <table id="main_table">
             <thead>
@@ -469,28 +467,21 @@
         </table>
     </div>
 
-    <!-- 引入外部主板数据JS文件 -->
     <script src="motherboard_data.js"></script>
     <script>
-        // 表头（保持与数据结构对应）
         const headers = ["主板型号", "板型", "CPU厂家", "CPU", "芯片组", "内存类型", "内存槽", "ECC支持", "规格书", "Sales kit"];
-        // 需要添加链接的字段索引
         const linkColumns = [8, 9]; 
-        // 链接前缀（根据实际文件路径修改）
         const linkPrefixes = {
-            8: "docs/specs/",  // 规格书文件路径前缀
-            9: "docs/sales/"   // Sales kit文件路径前缀
+            8: "docs/specs/",
+            9: "docs/sales/"
         };
-        // 需要隐藏筛选器的列索引（"规格书"和"Sales kit"）
         const excludeFilterColumns = [8, 9]; 
         
-        // 初始化页面
         function init() {
             renderTable();
             renderFilters();
         }
         
-        // 渲染表格（带链接功能）
         function renderTable() {
             const headerElement = document.getElementById('table-header');
             const bodyElement = document.getElementById('table-body');
@@ -498,21 +489,18 @@
             headerElement.innerHTML = '';
             bodyElement.innerHTML = '';
             
-            // 生成表头（全部显示）
             headers.forEach(header => {
                 const th = document.createElement('th');
                 th.textContent = header;
                 headerElement.appendChild(th);
             });
             
-            // 生成表格内容（全部显示）
             motherboardData.forEach(row => {
                 const tr = document.createElement('tr');
                 
                 row.forEach((cell, index) => {
                     const td = document.createElement('td');
                     
-                    // 为链接字段添加链接
                     if (linkColumns.includes(index)) {
                         const motherboardModel = row[0];
                         const linkUrl = `${linkPrefixes[index]}${motherboardModel}.pdf`;
@@ -532,18 +520,15 @@
             });
         }
         
-        // 渲染筛选控件（优化移动端布局）
         function renderFilters() {
             const filterContainer = document.getElementById('filter-container');
             filterContainer.innerHTML = '';
             
             headers.forEach((header, index) => {
-                // 跳过需要隐藏筛选器的列
                 if (excludeFilterColumns.includes(index)) {
                     return;
                 }
                 
-                // 为筛选控件添加分组容器，优化移动端布局
                 const filterGroup = document.createElement('div');
                 filterGroup.className = 'filter-group';
                 
@@ -575,7 +560,7 @@
             });
         }
         
-        // 筛选表格（逻辑不变）
+        // 核心修改：将包含筛选改为精准筛选
         function filterTable() {
             const table = document.getElementById('main_table');
             const rows = table.getElementsByTagName('tr');
@@ -585,7 +570,6 @@
                 const cells = rows[i].getElementsByTagName('td');
                 
                 for (let j = 0; j < cells.length; j++) {
-                    // 跳过隐藏了筛选器的列
                     if (excludeFilterColumns.includes(j)) {
                         continue;
                     }
@@ -596,7 +580,8 @@
                         ? cells[j].querySelector('a').textContent 
                         : cells[j].textContent;
                     
-                    if (filterValue && cellValue.indexOf(filterValue) === -1) {
+                    // 关键修改：从indexOf判断改为严格相等判断
+                    if (filterValue && cellValue !== filterValue) {
                         showRow = false;
                         break;
                     }
@@ -606,7 +591,6 @@
             }
         }
         
-        // 切换筛选控件显示/隐藏
         function toggleFilters() {
             const filterContainer = document.getElementById('filter-container');
             filterContainer.classList.toggle('hidden');

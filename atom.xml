@@ -6,7 +6,7 @@
   <link href="https://sychimu.github.io/atom.xml" rel="self"/>
   
   <link href="https://sychimu.github.io/"/>
-  <updated>2025-08-27T03:46:25.232Z</updated>
+  <updated>2025-08-29T01:52:39.683Z</updated>
   <id>https://sychimu.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PE2000U安装Ubuntu24.10并开启FDE全盘加密</title>
+    <link href="https://sychimu.github.io/2025/08/29/PE2000U%E5%AE%89%E8%A3%85Ubuntu24-10%E5%B9%B6%E5%BC%80%E5%90%AFFDE%E5%85%A8%E7%9B%98%E5%8A%A0%E5%AF%86/"/>
+    <id>https://sychimu.github.io/2025/08/29/PE2000U%E5%AE%89%E8%A3%85Ubuntu24-10%E5%B9%B6%E5%BC%80%E5%90%AFFDE%E5%85%A8%E7%9B%98%E5%8A%A0%E5%AF%86/</id>
+    <published>2025-08-29T01:20:03.000Z</published>
+    <updated>2025-08-29T01:52:39.683Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="系统准备："><a href="#系统准备：" class="headerlink" title="系统准备："></a>系统准备：</h3><ul><li><p>官方Ubuntu24.10</p></li><li><p>使用<a href="https://rufus.ie/zh/">rufus</a>制作U盘启动盘  (不要使用Ventroy，因为要启用Secure Boot，会导致Ventroy无法引导)</p></li></ul><h3 id="硬件准备："><a href="#硬件准备：" class="headerlink" title="硬件准备："></a>硬件准备：</h3><p>1、PE2000U更新官网最新支持WIN11版本<a href="https://www.asus.com/networking-iot-servers/aiot-industrial-solutions/embedded-computers-edge-ai-systems/pe2000u/helpdesk_bios?model2Name=PE2000U">BIOS</a></p><p><img src="/2025/08/29/PE2000U%E5%AE%89%E8%A3%85Ubuntu24-10%E5%B9%B6%E5%BC%80%E5%90%AFFDE%E5%85%A8%E7%9B%98%E5%8A%A0%E5%AF%86/image-20250829092350624.png" alt="image-20250829092350624"></p><p>2、BIOS设定 Advanced &gt;&gt;&gt; PCH-FW Configuration &gt;&gt;&gt; 开启Firmware TPM 或 PTT (默认dTPM)，重启生效</p><p><img src="/2025/08/29/PE2000U%E5%AE%89%E8%A3%85Ubuntu24-10%E5%B9%B6%E5%BC%80%E5%90%AFFDE%E5%85%A8%E7%9B%98%E5%8A%A0%E5%AF%86/image-20250829092522290.png" alt="image-20250829092522290"></p><p>3、重启进BIOS设定 Advanced &gt;&gt;&gt; Trusted Computing &gt;&gt;&gt; Pending operation &gt;&gt; TPM Clear</p><p>​ (用于新安装系统，避免被占用使得安装时无法调用)</p><p><img src="/2025/08/29/PE2000U%E5%AE%89%E8%A3%85Ubuntu24-10%E5%B9%B6%E5%BC%80%E5%90%AFFDE%E5%85%A8%E7%9B%98%E5%8A%A0%E5%AF%86/image-20250829092819792.png" alt="image-20250829092819792"></p><p>4、BIOS设定，Security &gt;&gt;&gt; Secure Boot &gt;&gt;&gt; Enable</p><p><img src="/2025/08/29/PE2000U%E5%AE%89%E8%A3%85Ubuntu24-10%E5%B9%B6%E5%BC%80%E5%90%AFFDE%E5%85%A8%E7%9B%98%E5%8A%A0%E5%AF%86/image-20250829092944236.png" alt="image-20250829092944236"></p><h3 id="系统安装："><a href="#系统安装：" class="headerlink" title="系统安装："></a>系统安装：</h3><p>1、使用官方ISO 制作U盘启动盘，正常引导安装Ubuntu24.10，在选择磁盘界面，点高级功能，选择启用硬件支持的全盘加密（FDE)，进行安装</p><p><img src="/2025/08/29/PE2000U%E5%AE%89%E8%A3%85Ubuntu24-10%E5%B9%B6%E5%BC%80%E5%90%AFFDE%E5%85%A8%E7%9B%98%E5%8A%A0%E5%AF%86/image-20250829093444768.png" alt="image-20250829093444768"></p><p>6、安装后，按提示重启，自动完成解密进入系统<br>7、可通过sudo snap recovery –show-keys 获取密钥并手动记录，用于自动解密失效等异常情况</p><p><img src="/2025/08/29/PE2000U%E5%AE%89%E8%A3%85Ubuntu24-10%E5%B9%B6%E5%BC%80%E5%90%AFFDE%E5%85%A8%E7%9B%98%E5%8A%A0%E5%AF%86/image-20250829093547337.png" alt="image-20250829093547337"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;系统准备：&quot;&gt;&lt;a href=&quot;#系统准备：&quot; class=&quot;headerlink&quot; title=&quot;系统准备：&quot;&gt;&lt;/a&gt;系统准备：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;官方Ubuntu24.10&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;a href=&quot;https:/</summary>
+      
+    
+    
+    
+    
+    <category term="Ubuntu" scheme="https://sychimu.github.io/tags/Ubuntu/"/>
+    
+    <category term="FDE全盘加密" scheme="https://sychimu.github.io/tags/FDE%E5%85%A8%E7%9B%98%E5%8A%A0%E5%AF%86/"/>
+    
+    <category term="TPM" scheme="https://sychimu.github.io/tags/TPM/"/>
+    
+  </entry>
   
   <entry>
     <title>H110T-CM-A主板 看门狗使用</title>

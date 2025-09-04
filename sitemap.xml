@@ -128,15 +128,6 @@
   </url>
   
   <url>
-    <loc>https://sychimu.github.io/categories/index.html</loc>
-    
-    <lastmod>2025-08-06</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://sychimu.github.io/about/index.html</loc>
     
     <lastmod>2025-08-06</lastmod>
@@ -147,6 +138,15 @@
   
   <url>
     <loc>https://sychimu.github.io/books/index.html</loc>
+    
+    <lastmod>2025-08-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/categories/index.html</loc>
     
     <lastmod>2025-08-06</lastmod>
     
@@ -203,20 +203,6 @@
   </url>
   
   <url>
-    <loc>https://sychimu.github.io/tags/PE1100N/</loc>
-    <lastmod>2025-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sychimu.github.io/tags/Jetson/</loc>
-    <lastmod>2025-09-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sychimu.github.io/tags/Ubuntu/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -253,6 +239,20 @@
   
   <url>
     <loc>https://sychimu.github.io/tags/NVIDIA/</loc>
+    <lastmod>2025-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/PE1100N/</loc>
+    <lastmod>2025-09-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/Jetson/</loc>
     <lastmod>2025-09-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

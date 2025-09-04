@@ -6,7 +6,7 @@
   <link href="https://sychimu.github.io/atom.xml" rel="self"/>
   
   <link href="https://sychimu.github.io/"/>
-  <updated>2025-08-29T01:52:39.683Z</updated>
+  <updated>2025-09-04T08:49:49.297Z</updated>
   <id>https://sychimu.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>800系列芯片组主板win10下显示2个GPU</title>
+    <link href="https://sychimu.github.io/2025/09/04/800%E7%B3%BB%E5%88%97%E8%8A%AF%E7%89%87%E7%BB%84%E4%B8%BB%E6%9D%BFwin10%E4%B8%8B%E6%98%BE%E7%A4%BA2%E4%B8%AAGPU/"/>
+    <id>https://sychimu.github.io/2025/09/04/800%E7%B3%BB%E5%88%97%E8%8A%AF%E7%89%87%E7%BB%84%E4%B8%BB%E6%9D%BFwin10%E4%B8%8B%E6%98%BE%E7%A4%BA2%E4%B8%AAGPU/</id>
+    <published>2025-09-04T08:06:21.000Z</published>
+    <updated>2025-09-04T08:49:49.297Z</updated>
+    
+    <content type="html"><![CDATA[<p>支持的 Intel Ultra 处理器的 800 系列芯片组的主板Q870&#x2F;B860&#x2F;Z890 等。</p><p>Ultra 系列处理器除了后缀为 F&#x2F;KF 之外，大多数都是有 CPU 集成核显。</p><p>我们使用华硕 ROG STRIX B860-F Gaming 配合 Ultra 5 235 处理器，没有安装独显：</p><img src="/2025/09/04/800%E7%B3%BB%E5%88%97%E8%8A%AF%E7%89%87%E7%BB%84%E4%B8%BB%E6%9D%BFwin10%E4%B8%8B%E6%98%BE%E7%A4%BA2%E4%B8%AAGPU/image-20250904163919867.png" alt="image-20250904163919867" style="zoom:67%;"><p>虽然官网上推荐 800 系列芯片组的主板安装 <strong>Windows11</strong> 的操作系统，但是部分驱动也提供了 Windows10 的支持。</p><p>首先我们在这个平台上安装 <strong>Windows10 22H2</strong> 版本的系统：</p><img src="/2025/09/04/800%E7%B3%BB%E5%88%97%E8%8A%AF%E7%89%87%E7%BB%84%E4%B8%BB%E6%9D%BFwin10%E4%B8%8B%E6%98%BE%E7%A4%BA2%E4%B8%AAGPU/image-20250904163959034.png" alt="image-20250904163959034" style="zoom: 67%;"><p>除了 MediaTek MT7925 的无线网卡因为驱动不支持 Windows10 以外，我们用官网的驱动安装好其他部分全部驱动。</p><p>然后我们进入设备管理器里，确认显示适配器只有1个Intel（R) Graphics ：</p><p><img src="/2025/09/04/800%E7%B3%BB%E5%88%97%E8%8A%AF%E7%89%87%E7%BB%84%E4%B8%BB%E6%9D%BFwin10%E4%B8%8B%E6%98%BE%E7%A4%BA2%E4%B8%AAGPU/image-20250904164039733.png" alt="image-20250904164039733"></p><p>而任务管理器里，发现在只用核显的情况下，GPU 居然有两个，GPU0 和 GPU1：</p><img src="/2025/09/04/800%E7%B3%BB%E5%88%97%E8%8A%AF%E7%89%87%E7%BB%84%E4%B8%BB%E6%9D%BFwin10%E4%B8%8B%E6%98%BE%E7%A4%BA2%E4%B8%AAGPU/image-20250904164201648.png" alt="image-20250904164201648" style="zoom:67%;"><p>GPU0 对应的是核显，从信息里的驱动程序版本这里可以看出来。</p><p>GPU1 下的信息非常少，无法确认是什么硬件设备。</p><img src="/2025/09/04/800%E7%B3%BB%E5%88%97%E8%8A%AF%E7%89%87%E7%BB%84%E4%B8%BB%E6%9D%BFwin10%E4%B8%8B%E6%98%BE%E7%A4%BA2%E4%B8%AAGPU/image-20250904164219098.png" alt="image-20250904164219098" style="zoom:67%;"><p>那 GPU1 是什么？其实 GPU1 就是 AI BOOST 即 AI 加速。Windows10 对于 Ultra 系列处理器的 AI 加速支持不完善，所以 AI 加速这里显示为 Intel 保留设备的字样。而在任务管理器里，就多了一个 GPU1。</p><img src="/2025/09/04/800%E7%B3%BB%E5%88%97%E8%8A%AF%E7%89%87%E7%BB%84%E4%B8%BB%E6%9D%BFwin10%E4%B8%8B%E6%98%BE%E7%A4%BA2%E4%B8%AAGPU/image-20250904164245877.png" alt="image-20250904164245877" style="zoom:67%;"><p>当我们安装了推荐的 Windows11 的系统后，设备管理器里正确识别到 Intel AI 加速器的名称 Intel AI Boost：</p><img src="/2025/09/04/800%E7%B3%BB%E5%88%97%E8%8A%AF%E7%89%87%E7%BB%84%E4%B8%BB%E6%9D%BFwin10%E4%B8%8B%E6%98%BE%E7%A4%BA2%E4%B8%AAGPU/image-20250904164257548.png" alt="image-20250904164257548" style="zoom:67%;"><p>任务管理器里原来的 GPU1 也变成了 NPU：</p><img src="/2025/09/04/800%E7%B3%BB%E5%88%97%E8%8A%AF%E7%89%87%E7%BB%84%E4%B8%BB%E6%9D%BFwin10%E4%B8%8B%E6%98%BE%E7%A4%BA2%E4%B8%AAGPU/image-20250904164602833.png" alt="image-20250904164602833" style="zoom: 80%;">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;支持的 Intel Ultra 处理器的 800 系列芯片组的主板Q870&amp;#x2F;B860&amp;#x2F;Z890 等。&lt;/p&gt;
+&lt;p&gt;Ultra 系列处理器除了后缀为 F&amp;#x2F;KF 之外，大多数都是有 CPU 集成核显。&lt;/p&gt;
+&lt;p&gt;我们使用华硕 ROG STRI</summary>
+      
+    
+    
+    
+    
+    <category term="-800系列 -GPU" scheme="https://sychimu.github.io/tags/800%E7%B3%BB%E5%88%97-GPU/"/>
+    
+  </entry>
   
   <entry>
     <title>PE2000U安装Ubuntu24.10并开启FDE全盘加密</title>

@@ -6,7 +6,7 @@
   <link href="https://sychimu.github.io/atom.xml" rel="self"/>
   
   <link href="https://sychimu.github.io/"/>
-  <updated>2025-09-04T08:52:34.157Z</updated>
+  <updated>2025-09-09T01:47:13.596Z</updated>
   <id>https://sychimu.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tinker Board 3N Android14 开机自启WIFI调试及5555端口</title>
+    <link href="https://sychimu.github.io/2025/09/09/Tinker-Board-3N-Android14-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AFWIFI%E8%B0%83%E8%AF%95%E5%8F%8A5555%E7%AB%AF%E5%8F%A3/"/>
+    <id>https://sychimu.github.io/2025/09/09/Tinker-Board-3N-Android14-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AFWIFI%E8%B0%83%E8%AF%95%E5%8F%8A5555%E7%AB%AF%E5%8F%A3/</id>
+    <published>2025-09-09T01:26:41.000Z</published>
+    <updated>2025-09-09T01:47:13.596Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="步骤-1：挂载系统分区为可写"><a href="#步骤-1：挂载系统分区为可写" class="headerlink" title="步骤 1：挂载系统分区为可写"></a><strong>步骤 1：挂载系统分区为可写</strong></h5><p>Android 系统分区（如 <code>/system</code>、<code>/vendor</code>）默认只读，需先挂载为可写：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#已链接USB调试，PC端操作</span><br><span class="line">adb root</span><br><span class="line">adb remount</span><br></pre></td></tr></table></figure><h5 id="步骤-2：修改-init-脚本"><a href="#步骤-2：修改-init-脚本" class="headerlink" title="步骤 2：修改 init 脚本"></a><strong>步骤 2：修改 init 脚本</strong></h5><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 拉取文件到PC,默认ADB所在文件夹</span><br><span class="line">adb pull /vendor/etc/init/init.tinker_board_3n.rc </span><br><span class="line"></span><br><span class="line"># 编辑文件（添加以下内容到on init阶段）</span><br><span class="line"># 在文件中找到&quot;on init&quot;段落，添加：</span><br><span class="line">setprop persist.adb.tcp.port <span class="number">5555</span>    # 修改默认<span class="number">5555</span>端口</span><br><span class="line"><span class="built_in">start</span> adbd    # 确保adbd在开机时启动，不受USB状态影响</span><br></pre></td></tr></table></figure><p><img src="/2025/09/09/Tinker-Board-3N-Android14-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AFWIFI%E8%B0%83%E8%AF%95%E5%8F%8A5555%E7%AB%AF%E5%8F%A3/image-20250909094656652.png" alt="image-20250909094656652"></p><h5 id="步骤-3：推送修改后-init-tinker-board-3n-rc-的文件并重启"><a href="#步骤-3：推送修改后-init-tinker-board-3n-rc-的文件并重启" class="headerlink" title="步骤 3：推送修改后 init.tinker_board_3n.rc 的文件并重启"></a><strong>步骤 3：推送修改后 <a href="init.tinker_board_3n.rc">init.tinker_board_3n.rc</a> 的文件并重启</strong></h5><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 推送修改后的文件回设备（覆盖原文件）</span><br><span class="line">adb push init.tinker_board_3n.rc /vendor/etc/init/init.tinker_board_3n.rc</span><br><span class="line"></span><br><span class="line"># 重启设备</span><br><span class="line">adb reboot</span><br></pre></td></tr></table></figure><h4 id="4-验证效果"><a href="#4-验证效果" class="headerlink" title="4. 验证效果"></a><strong>4. 验证效果</strong></h4><p>设备重启后，无需 USB 连接，直接测试：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 连接无线ADB</span><br><span class="line">adb connect &lt;设备IP&gt;:<span class="number">5555</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;步骤-1：挂载系统分区为可写&quot;&gt;&lt;a href=&quot;#步骤-1：挂载系统分区为可写&quot; class=&quot;headerlink&quot; title=&quot;步骤 1：挂载系统分区为可写&quot;&gt;&lt;/a&gt;&lt;strong&gt;步骤 1：挂载系统分区为可写&lt;/strong&gt;&lt;/h5&gt;&lt;p&gt;Andro</summary>
+      
+    
+    
+    
+    
+    <category term="Tinker" scheme="https://sychimu.github.io/tags/Tinker/"/>
+    
+    <category term="Android" scheme="https://sychimu.github.io/tags/Android/"/>
+    
+    <category term="无线调试" scheme="https://sychimu.github.io/tags/%E6%97%A0%E7%BA%BF%E8%B0%83%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tinker Board 3N Android14 WIFI固定IP设定</title>
+    <link href="https://sychimu.github.io/2025/09/09/Tinker-Board-3N-Android14-WIFI%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E5%AE%9A/"/>
+    <id>https://sychimu.github.io/2025/09/09/Tinker-Board-3N-Android14-WIFI%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E5%AE%9A/</id>
+    <published>2025-09-09T00:58:18.000Z</published>
+    <updated>2025-09-09T01:24:32.650Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li><h3 id="固件版本："><a href="#固件版本：" class="headerlink" title="固件版本："></a>固件版本：</h3></li></ul><p><a href="https://dlcdnets.asus.com/pub/ASUS/Embedded_IPC/Tinker%20Board%203N/Tinker_Board_3N-Android14-v1.0.15-20250729.zip?model=Tinker%20Board%203N">Tinker Board 3N Android 14 V1.0.15</a></p><p><img src="/2025/09/09/Tinker-Board-3N-Android14-WIFI%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E5%AE%9A/image-20250909091743596.png" alt="image-20250909091743596"></p><ul><li><h3 id="操作步骤："><a href="#操作步骤：" class="headerlink" title="操作步骤："></a>操作步骤：</h3></li></ul><p>1、正常连接需要的WIFI SSID，比如测试WIFI：OPENCLEB，进入当前已连接WIFI设定</p><img src="/2025/09/09/Tinker-Board-3N-Android14-WIFI%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E5%AE%9A/image-20250909090120453.png" alt="image-20250909090120453" style="zoom:50%;"><p>2、进入 网络详情，右上角 <em>修改</em> 页面</p><img src="/2025/09/09/Tinker-Board-3N-Android14-WIFI%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E5%AE%9A/image-20250909090333577.png" alt="image-20250909090333577" style="zoom:50%;"><p>3、进入当前WIFI高级选项</p><img src="/2025/09/09/Tinker-Board-3N-Android14-WIFI%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E5%AE%9A/image-20250909090407404.png" alt="image-20250909090407404" style="zoom:50%;"><p>4、IP设置，默认：DHCP，点击修为：静态</p><img src="/2025/09/09/Tinker-Board-3N-Android14-WIFI%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E5%AE%9A/image-20250909090450337.png" alt="image-20250909090450337" style="zoom:50%;"><p>5、根据路由器的分配原则，手动添加IP地址、网关、网络前缀长度（<a href="https://ipjisuanqi.com/">子网掩码换算器</a>）、DNS等</p><img src="/2025/09/09/Tinker-Board-3N-Android14-WIFI%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E5%AE%9A/image-20250909091313771.png" alt="image-20250909091313771" style="zoom:50%;"><p>6、如上信息如果不知道路由器的规则，可在DHCP模式下，记录自动分配地址等信息后，参照填入</p><img src="/2025/09/09/Tinker-Board-3N-Android14-WIFI%E5%9B%BA%E5%AE%9AIP%E8%AE%BE%E5%AE%9A/image-20250909091420356.png" alt="image-20250909091420356" style="zoom:50%;">]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;h3 id=&quot;固件版本：&quot;&gt;&lt;a href=&quot;#固件版本：&quot; class=&quot;headerlink&quot; title=&quot;固件版本：&quot;&gt;&lt;/a&gt;固件版本：&lt;/h3&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&quot;https://dlcdnets.asus.com/pu</summary>
+      
+    
+    
+    
+    
+    <category term="Tinker" scheme="https://sychimu.github.io/tags/Tinker/"/>
+    
+    <category term="Android" scheme="https://sychimu.github.io/tags/Android/"/>
+    
+  </entry>
   
   <entry>
     <title>800系列芯片组主板win10下显示2个GPU</title>
@@ -99,9 +152,9 @@
     <link href="https://sychimu.github.io/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/"/>
     <id>https://sychimu.github.io/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/</id>
     <published>2025-08-19T08:31:52.000Z</published>
-    <updated>2025-08-19T09:00:59.255Z</updated>
+    <updated>2025-09-04T09:05:56.917Z</updated>
     
-    <content type="html"><![CDATA[<table><thead><tr><th>接口类型</th><th>搜索型号</th><th>图例</th></tr></thead><tbody><tr><td>BOX header 2x5p, K9,<em>1.0mm</em> pitch</td><td>SHD1.0mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image002.png" alt="img"></td></tr><tr><td>WtoB 2x20p, <em>1.25mm</em>  pitch</td><td>DF13-40DS</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image004.png" alt="img"></td></tr><tr><td>Header 1x5p, K6, <em>1.0mm</em> pitch</td><td>SH1.0mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image006.png" alt="img"></td></tr><tr><td>WtoB 1x4p, <em>1.25mm</em>  pitch</td><td>MX1.25mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image008.png" alt="img"></td></tr><tr><td>BOX HD 2X5P G&#x2F;F <em>2.0</em> K8  BLK&#x2F;C S&#x2F;T</td><td>杜邦胶壳2.0mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image010.png" alt="img"></td></tr><tr><td>WAFER HD 4P G&#x2F;F <em>2.0</em>  BLK&#x2F;C S&#x2F;T</td><td>PH2.0mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image012.png" alt="img"></td></tr><tr><td>WAFER HD 1X4P <em>3.96MM</em> NAT S&#x2F;T DIP</td><td>VH3.96mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image014.png" alt="img"></td></tr><tr><td>WAFER HD 4P <em>2.5MM</em> NAT S&#x2F;T DIP</td><td>XH2.5mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image016.png" alt="img"></td></tr><tr><td>HEADER  2x5p, K10, <em>2.54mm</em> pitch</td><td>杜邦胶壳2.54mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image002-1755593564485-1.png" alt="img"></td></tr></tbody></table>]]></content>
+    <content type="html"><![CDATA[<table><thead><tr><th>接口类型</th><th>搜索型号</th><th>图例</th></tr></thead><tbody><tr><td>BOX header 2x5p, K9,<em>1.0mm</em> pitch</td><td>SHD1.0mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image002.png" alt="img"></td></tr><tr><td>WtoB 2x20p, <em>1.25mm</em>  pitch</td><td>DF13-40DS</td><td>xxxxxxxxxx $ gsettings set org.ukui.power-manager button-power shutdownbash</td></tr><tr><td>Header 1x5p, K6, <em>1.0mm</em> pitch</td><td>SH1.0mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image006.png" alt="img"></td></tr><tr><td>WtoB 1x4p, <em>1.25mm</em>  pitch</td><td>MX1.25mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image008.png" alt="img"></td></tr><tr><td>BOX HD 2X5P G&#x2F;F <em>2.0</em> K8  BLK&#x2F;C S&#x2F;T</td><td>杜邦胶壳2.0mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image010.png" alt="img"></td></tr><tr><td>WAFER HD 4P G&#x2F;F <em>2.0</em>  BLK&#x2F;C S&#x2F;T</td><td>PH2.0mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image012.png" alt="img"></td></tr><tr><td>WAFER HD 1X4P <em>3.96MM</em> NAT S&#x2F;T DIP</td><td>VH3.96mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image014.png" alt="img"></td></tr><tr><td>WAFER HD 4P <em>2.5MM</em> NAT S&#x2F;T DIP</td><td>XH2.5mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image016.png" alt="img"></td></tr><tr><td>HEADER  2x5p, K10, <em>2.54mm</em> pitch</td><td>杜邦胶壳2.54mm</td><td><img src="/2025/08/19/%E5%B8%B8%E8%A7%81%E6%8E%A5%E5%8F%A3%E8%A7%84%E6%A0%BC%E5%8F%8A%E5%AF%B9%E5%BA%94%E5%9E%8B%E5%8F%B7/clip_image002-1755593564485-1.png" alt="img"></td></tr></tbody></table>]]></content>
     
     
       
@@ -285,7 +338,7 @@
     <link href="https://sychimu.github.io/2025/08/06/hello-world/"/>
     <id>https://sychimu.github.io/2025/08/06/hello-world/</id>
     <published>2025-08-06T04:12:11.478Z</published>
-    <updated>2025-09-03T07:30:48.718Z</updated>
+    <updated>2025-09-04T09:06:36.598Z</updated>
     
     <content type="html"><![CDATA[<p>欢迎来到Caspar的小站，临时分享一些技术内容！</p>]]></content>
     

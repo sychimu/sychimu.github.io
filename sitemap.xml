@@ -173,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://sychimu.github.io/repository/index.html</loc>
+    <loc>https://sychimu.github.io/books/index.html</loc>
     
     <lastmod>2025-08-06</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://sychimu.github.io/books/index.html</loc>
+    <loc>https://sychimu.github.io/repository/index.html</loc>
     
     <lastmod>2025-08-06</lastmod>
     
@@ -237,6 +237,34 @@
   </url>
   
   <url>
+    <loc>https://sychimu.github.io/tags/PE1100N/</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/Jetson/</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/SATA%E7%83%AD%E6%8F%92%E6%8B%94/</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/Hot-plug/</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sychimu.github.io/tags/Ubuntu/</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -258,48 +286,6 @@
   </url>
   
   <url>
-    <loc>https://sychimu.github.io/tags/PE1100N/</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sychimu.github.io/tags/Jetson/</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sychimu.github.io/tags/Tinker/</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sychimu.github.io/tags/Android/</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sychimu.github.io/tags/SATA%E7%83%AD%E6%8F%92%E6%8B%94/</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sychimu.github.io/tags/Hot-plug/</loc>
-    <lastmod>2026-01-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sychimu.github.io/tags/Q470EA/</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -315,6 +301,20 @@
   
   <url>
     <loc>https://sychimu.github.io/tags/NVIDIA/</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/Tinker/</loc>
+    <lastmod>2026-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sychimu.github.io/tags/Android/</loc>
     <lastmod>2026-01-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -6,7 +6,7 @@
   <link href="https://sychimu.github.io/atom.xml" rel="self"/>
   
   <link href="https://sychimu.github.io/"/>
-  <updated>2026-01-13T02:48:26.203Z</updated>
+  <updated>2026-01-19T05:52:11.980Z</updated>
   <id>https://sychimu.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://sychimu.github.io/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/"/>
     <id>https://sychimu.github.io/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/</id>
     <published>2026-01-13T02:32:59.000Z</published>
-    <updated>2026-01-13T02:48:26.203Z</updated>
+    <updated>2026-01-19T05:52:11.980Z</updated>
     
-    <content type="html"><![CDATA[<p>1、使用磁盘管理进行分区</p><p><img src="/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/image-20260113103729349-1768271869741.png" alt="image-20260113103729349"></p><p>2、需要将磁盘2划分一个130G的分区，右键未分配分区，新建简单卷</p><img src="/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/image-20260113103915302.png" alt="image-20260113103915302" style="zoom: 67%;"><p>3、下一页，简单卷大小，填入 130*1024&#x3D;<strong>133120+1</strong>&#x3D;133121 MB  （ 即需要的GB整数 <strong>N x 1024 + 1</strong> ）</p><img src="/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/image-20260113104336513.png" alt="image-20260113104336513" style="zoom:67%;"><p>4、下一页到完成，磁盘管理中看到130GB</p><p><img src="/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/image-20260113104443127.png" alt="image-20260113104443127"></p><p>5、此电脑中查看分区大小，新加卷（H:）共130GB（整数显示）</p><img src="/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/image-20260113104530795.png" alt="image-20260113104530795" style="zoom:67%;">]]></content>
+    <content type="html"><![CDATA[<p>1、使用磁盘管理进行分区</p><p><img src="/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/image-20260113103729349-1768271869741.png" alt="image-20260113103729349"></p><p>2、需要将磁盘2划分一个130G的分区，右键未分配分区，新建简单卷</p><img src="/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/image-20260113103915302.png" alt="image-20260113103915302" style="zoom: 67%;"><p>3、下一页，简单卷大小，填入 130*1024&#x3D;<strong>133120+1</strong>&#x3D;133121 MB  （ 即需要的GB整数 <strong>N x 1024 + 1</strong> ）</p><p>如果划分需要可用空间和总共空间都是整数，需要 <strong>(N+1) x 1024</strong>，比如200G，就是205824MB</p><img src="/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/image-20260113104336513.png" alt="image-20260113104336513" style="zoom:67%;"><p>4、下一页到完成，磁盘管理中看到130GB</p><p><img src="/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/image-20260113104443127.png" alt="image-20260113104443127"></p><p>5、此电脑中查看分区大小，新加卷（H:）共130GB（整数显示）</p><img src="/2026/01/13/Win10-%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%95%B4%E6%95%B0%E5%88%86%E5%8C%BA/image-20260113104530795.png" alt="image-20260113104530795" style="zoom:67%;">]]></content>
     
     
       
